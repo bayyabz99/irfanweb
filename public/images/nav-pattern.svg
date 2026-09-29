@@ -1,0 +1,62 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Classical Seljuk / Islamic Geometric 8-Point Star and Arabesque Grid -->
+  <defs>
+    <style>
+      .p-line { stroke: #d4af37; stroke-width: 0.7; stroke-opacity: 0.35; fill: none; }
+      .p-sub { stroke: #2dd4bf; stroke-width: 0.45; stroke-opacity: 0.2; fill: none; }
+      .p-node { fill: #d4af37; fill-opacity: 0.4; }
+    </style>
+  </defs>
+
+  <!-- Central 8-pointed star & interlocking squares -->
+  <g transform="translate(30,30)">
+    <!-- Square 1 -->
+    <rect x="-12" y="-12" width="24" height="24" class="p-line" />
+    <!-- Square 2 (rotated 45 deg) -->
+    <rect x="-12" y="-12" width="24" height="24" transform="rotate(45)" class="p-line" />
+    <!-- Inner Octagon -->
+    <circle r="6" class="p-sub" stroke-dasharray="1.5,1.5" />
+    <circle r="1" class="p-node" />
+    
+    <!-- Radiating ornamental diagonal lines -->
+    <line x1="-30" y1="-30" x2="-17" y2="-17" class="p-sub" />
+    <line x1="30" y1="-30" x2="17" y2="-17" class="p-sub" />
+    <line x1="30" y1="30" x2="17" y2="17" class="p-sub" />
+    <line x1="-30" y1="30" x2="-17" y2="17" class="p-sub" />
+    
+    <!-- Orthogonal connecting lines -->
+    <line x1="0" y1="-30" x2="0" y2="-17" class="p-line" />
+    <line x1="0" y1="30" x2="0" y2="17" class="p-line" />
+    <line x1="-30" y1="0" x2="-17" y2="0" class="p-line" />
+    <line x1="30" y1="0" x2="17" y2="0" class="p-line" />
+  </g>
+
+  <!-- Corner 8-pointed star quadrants that seamlessly match on repeat -->
+  <!-- Top Left (0,0) -->
+  <g transform="translate(0,0)">
+    <rect x="-12" y="-12" width="24" height="24" class="p-line" />
+    <rect x="-12" y="-12" width="24" height="24" transform="rotate(45)" class="p-line" />
+    <circle r="6" class="p-sub" stroke-dasharray="1.5,1.5" />
+  </g>
+
+  <!-- Top Right (60,0) -->
+  <g transform="translate(60,0)">
+    <rect x="-12" y="-12" width="24" height="24" class="p-line" />
+    <rect x="-12" y="-12" width="24" height="24" transform="rotate(45)" class="p-line" />
+    <circle r="6" class="p-sub" stroke-dasharray="1.5,1.5" />
+  </g>
+
+  <!-- Bottom Left (0,60) -->
+  <g transform="translate(0,60)">
+    <rect x="-12" y="-12" width="24" height="24" class="p-line" />
+    <rect x="-12" y="-12" width="24" height="24" transform="rotate(45)" class="p-line" />
+    <circle r="6" class="p-sub" stroke-dasharray="1.5,1.5" />
+  </g>
+
+  <!-- Bottom Right (60,60) -->
+  <g transform="translate(60,60)">
+    <rect x="-12" y="-12" width="24" height="24" class="p-line" />
+    <rect x="-12" y="-12" width="24" height="24" transform="rotate(45)" class="p-line" />
+    <circle r="6" class="p-sub" stroke-dasharray="1.5,1.5" />
+  </g>
+</svg>

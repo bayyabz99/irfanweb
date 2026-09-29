@@ -1,0 +1,290 @@
+@import "tailwindcss";
+
+:root {
+  --background: #061A33;
+  --foreground: #f8fafc;
+  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-sans: var(--font-sans), 'Inter', system-ui, sans-serif;
+  --navy-dark: #030D1A;
+  --navy-primary: #061A33;
+  --navy-card: #092746;
+  --navy-surface: #0D3156;
+  --navy-hover: #123D69;
+  --blue-accent: #4DA3FF;
+  --blue-light: #65B5FF;
+  --blue-btn: #258BF5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #061A33;
+  color: #f8fafc;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #061A33;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0D3156;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4DA3FF;
+}
+
+/* Executive navy glassmorphism & cards */
+.glass-navy {
+  background: rgba(9, 39, 70, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(77, 163, 255, 0.16);
+}
+
+.glass-navy-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-navy-hover:hover {
+  background: rgba(13, 49, 86, 0.92);
+  border-color: rgba(77, 163, 255, 0.4);
+  box-shadow: 0 12px 36px -10px rgba(6, 26, 51, 0.8), 0 0 20px -5px rgba(77, 163, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.glow-accent {
+  box-shadow: 0 0 30px -5px rgba(77, 163, 255, 0.35);
+}
+
+.glow-btn {
+  box-shadow: 0 8px 24px -4px rgba(37, 139, 245, 0.45);
+}
+
+/* Inner pages aligned with homepage + profile */
+.igm-page {
+  min-height: 100vh;
+  background: #020B16;
+  color: #f8fafc;
+}
+
+.igm-card {
+  background: #06182e;
+  border: 1px solid rgba(24, 54, 89, 0.72);
+  box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+}
+
+.igm-card-hover {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.igm-card-hover:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 16px 36px -16px rgba(34, 211, 238, 0.22);
+}
+
+.igm-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  color: #22d3ee;
+}
+
+.igm-input {
+  background: #030a14;
+  border: 1px solid rgba(24, 54, 89, 0.85);
+  color: #fff;
+}
+
+.igm-input::placeholder {
+  color: #64748b;
+}
+
+.igm-input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+/* Smooth Infinite Marquee Animation (Right to Left) */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Multi-page document printing (official PDF report, schedule & tickets) */
+@media print {
+  @page {
+    size: landscape;
+    margin: 6mm 8mm;
+  }
+
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    background: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Reset layout constraints so multi-page content flows naturally */
+  .h-screen, .min-h-screen, .overflow-hidden, .overflow-y-auto {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  /* Hide admin header, sidebar and buttons when printing */
+  header,
+  aside,
+  nav,
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Specific single-badge ticket printing on profile page */
+  #printable-ticket,
+  #printable-program {
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 16px !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Official PDF multi-page report: MUST NOT be absolute so it paginates across pages */
+  #igm-official-pdf-report {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    float: none !important;
+    page-break-before: auto !important;
+    page-break-after: auto !important;
+    page-break-inside: auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #igm-official-pdf-report * {
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Table multi-page rules: repeat header on each new page and prevent row slicing */
+  #igm-official-pdf-report table {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    table-layout: auto !important;
+    font-size: 10px !important;
+  }
+
+  #igm-official-pdf-report thead {
+    display: table-header-group !important;
+  }
+
+  #igm-official-pdf-report tbody {
+    display: table-row-group !important;
+  }
+
+  #igm-official-pdf-report tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  #igm-official-pdf-report th,
+  #igm-official-pdf-report td {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    padding: 6px 6px !important;
+    font-size: 10px !important;
+  }
+
+  #igm-official-pdf-report th {
+    white-space: nowrap !important;
+  }
+
+  /* Prevent official signature footer from splitting */
+  .report-signature-block {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-top: 24px !important;
+  }
+}
+
+@keyframes scanLaser {
+  0% {
+    top: 6%;
+    opacity: 0.6;
+  }
+  50% {
+    top: 92%;
+    opacity: 1;
+  }
+  100% {
+    top: 6%;
+    opacity: 0.6;
+  }
+}
+
+.animate-scan-laser {
+  animation: scanLaser 2.2s ease-in-out infinite;
+}

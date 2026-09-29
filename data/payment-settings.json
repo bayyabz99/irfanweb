@@ -1,0 +1,17 @@
+{
+  "bankName": "Kuveyt Türk Katılım Bankası",
+  "accountHolder": "TİMAV Vakfı - İrfan Genç Meclis Koordinatörlüğü",
+  "iban": "TR12 0020 5000 0012 3456 7890 01",
+  "feeAmount": "350 TL",
+  "paymentDescription": "{fullName} - {qrCodeId} - İGM 2026 Katılım Payı",
+  "emailSubject": "İrfan Genç Meclis 2026 - Delege Başvurunuz & Katılım Payı Bilgilendirmesi",
+  "emailHeaderTitle": "İrfan Genç Meclis 2026 Başvurunuz Alındı!",
+  "emailMessage": "Değerli {fullName},\n\nİrfan Genç Meclis 2026 delege başvurunuz başarıyla tarafımıza ulaşmıştır.\n\nBaşvurunuzun kesinleşmesi ve komisyon kaydınızın onaylanması için lütfen yukarıda belirtilen katılım payını banka hesabımıza açıklama kısmına başvuru kodunuzu ve adınızı yazarak iletiniz.\n\nÖdeme dekontunuz ulaştıktan sonra başvurunuz heyetimizce incelenecek ve onaylandığında başvuru sırasında belirlediğiniz şifreniz ile delege portalına giriş yapıp kişisel QR yaka kartınızı indirebileceksiniz.\n\nMeclisimizde sizinle birlikte olmaktan onur duyacağız.",
+  "additionalNotes": "* Ödeme yaptıktan sonra dekontunuzu saklamanız rica olunur.\n* Sorularınız için bilgi@irfangenc.org veya iletişim numaramız üzerinden Meclis Sekreteryasına ulaşabilirsiniz.",
+  "senderName": "İrfan Genç Meclisi Koordinatörlüğü /ZİFT STUDİO SMTP SİSTEMİ",
+  "smtpHost": "smtp.gmail.com",
+  "smtpPort": 587,
+  "smtpSecure": false,
+  "smtpUser": "irfanmeclissimulasyonu@gmail.com",
+  "smtpPass": "rzkh ksqk lzvv kcbd"
+}
